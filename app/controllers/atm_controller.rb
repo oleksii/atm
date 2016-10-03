@@ -2,20 +2,12 @@ class AtmController < ApplicationController
   def index
     @result
     bank
-    respond_to do |format|
-      format.html
-      #format.json do 
-      #  render json: {
-      #    total_amount: @bank.total_amount,
-      #    atm_result: @result
-      #  }.to_json
-      #end
-    end
+    render "index.json.jbuilder"
   end
   
   def update
     result_of_updating
-    #render action: 'index'
+    render "index.json.jbuilder"
   end
 
   private
@@ -30,6 +22,5 @@ class AtmController < ApplicationController
       elsif params[:commit] == 'get money'
         bank.get_money(params)
       end
-      render "index.json.jbuilder"
     end
 end

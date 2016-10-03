@@ -17,7 +17,7 @@ class Bank
 
     coin = coins.where(type: type).first
     if coin.update(amount: (coin.amount + new_amount))
-      return "the #{new_amount} coins was successfully added"
+      return "the #{new_amount} coins of denom #{coin.denom} was successfully added"
     else
       return 'something gone wrong'
     end
