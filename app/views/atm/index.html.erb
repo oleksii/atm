@@ -1,0 +1,28 @@
+<h2> Hello on the ATM page </h2>
+
+<p> Total amount is: <%= @bank.total_amount %></p>
+
+<h3> You gota: <%= @result %> </h3>
+
+<div>
+  <h3> You can add coins such denominations: </h3>
+
+  <%= form_for Coin.name.downcase, url: { action: 'update' } do |f| %>
+    <%= f.label :denom %>
+    <%= f.select :type, options_for_select(Coin.pluck :type) %>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+    <%= f.submit 'put money' %>
+  <% end %>
+</div>
+
+<br />
+
+<div>
+  <%= form_for Coin.name.downcase, url: { action: 'update' } do |f| %>
+    <%= f.label :amount %>
+    <%= f.text_field :amount %>
+    <%= f.submit 'get money' %>
+  <% end %>
+</div>
+

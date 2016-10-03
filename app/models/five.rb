@@ -1,0 +1,2 @@
+class Five < Coin
+end

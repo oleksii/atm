@@ -1,0 +1,2 @@
+class Fifty < Coin
+end

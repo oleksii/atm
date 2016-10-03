@@ -1,0 +1,2 @@
+class Ten < Coin
+end

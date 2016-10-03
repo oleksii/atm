@@ -1,0 +1,2 @@
+class Two < Coin
+end

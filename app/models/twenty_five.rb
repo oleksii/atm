@@ -1,0 +1,2 @@
+class TwentyFive < Coin
+end
